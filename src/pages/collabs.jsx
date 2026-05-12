@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { supabase } from '../supabaseClient';
-import Navbar from '../components/Navbar';
+import Navbar from '../components/navbar';
 import ProductGrid from '../components/ProductGrid';
 import ProductModal from '../components/ProductModal';
 
