@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { supabase } from '../supabaseClient';
 import closeIcon from '../assets/x.svg';
-
 // Reusable Components
-import Navbar from '../components/Navbar';
-import ProductGrid from '../components/ProductGrid';
-import ProductModal from '../components/ProductModal';
+import Navbar from '../components/navbar';
+import ProductGrid from '../components/productgrid';
+import ProductModal from '../components/productmodal';
 
 const Products = () => {
   // --- STATE MANAGEMENT ---

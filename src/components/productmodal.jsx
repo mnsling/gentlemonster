@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from './Navbar';
+import Navbar from './navbar';
 
 const ProductModal = ({ isOpen, product, onClose, onAddToCart }) => {
   if (!isOpen || !product) return null;
