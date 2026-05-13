@@ -157,22 +157,22 @@ const Navbar = () => {
 
       {/* SEARCH MODAL */}
       <div className={`fixed w-full h-full bg-white z-[240] flex flex-col items-center transition-all duration-300 ease-in-out ${activeModal === 'search' ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-4 pointer-events-none"}`}>
-        <div className='flex flex-col h-full max-w-[500px] items-end pt-40 lg:pt-24 px-6 transition'>
+        <div className='flex flex-col h-full w-full max-w-[500px] items-end pt-40 lg:pt-24 px-6 transition'>
           <button onClick={closeAll} className='hidden lg:block mb-10'><img src={x} alt="close search" /></button>
           <div className='flex gap-5 border-b border-black w-full pb-2 px-3 items-end justify-center'>
             <img src={search} alt="search icon" />
-            <input type="text" placeholder="Please enter the search term(s)" className='w-full outline-none font-host text-[14px]' autoFocus={activeModal === 'search'} />
+            <input type="text" placeholder="Please enter the search term(s)" className='w-full outline-none font-host text-[12px] lg:text-[14px]' autoFocus={activeModal === 'search'} />
           </div>
           <div className='w-full flex flex-col gap-12 mt-14'>
             <div className='flex flex-col gap-1'>
-              <h1 className="font-host text-[14px] tracking-wide">SEARCH TRENDS</h1>
+              <h1 className="font-host text-[12px] lg:text-[14px] tracking-wide">SEARCH TRENDS</h1>
               <div className="mt-4 flex gap-3 overflow-x-auto no-scrollbar scroll-smooth">
                 {[...Array(8)].map((_, index) => (
-                  <div key={index} className="w-[70px] h-[70px] rounded-full bg-neutral-200 animate-pulse flex-shrink-0" />
+                  <div key={index} className="w-[60px] h-[60px] lg:w-[70px] lg:h-[70px] rounded-full bg-neutral-200 animate-pulse flex-shrink-0 transition" />
                 ))}
               </div>
             </div>
-            <div className='font-host text-[14px] flex justify-between'>
+            <div className='font-host text-[12px] lg:text-[14px] flex justify-between'>
               <h1>RECENTLY VIEWED</h1>
               <button>CLEAR</button>
             </div>
