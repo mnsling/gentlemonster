@@ -181,7 +181,7 @@ const Products = () => {
         </aside>
 
         {/* MAIN PRODUCT AREA */}
-        <main className='flex-1 h-full overflow-y-auto pt-10 lg:pt-24 px-6 lg:px-12 bg-[#F6F6F6] mt-6'>
+        <main className='flex-1 h-full overflow-y-auto pt-10 lg:pt-24 px-6 lg:px-12 bg-[#F6F6F6]'>
           <div className='flex items-center gap-2 mb-8'>
             <h1 className='text-[12px] uppercase font-bold tracking-tight'>
               {mainType} / {selectedCollection}

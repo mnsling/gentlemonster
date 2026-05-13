@@ -8,9 +8,9 @@ const ProductModal = ({ isOpen, product, onClose, onAddToCart }) => {
     <div className="fixed inset-0 z-[200] bg-white animate-in fade-in duration-500 overflow-y-auto lg:overflow-hidden flex flex-col">
       <Navbar />
 
-      <div className="w-full h-full lg:flex lg:flex-row pt-[55px]">
+      <div className="w-full h-full lg:flex lg:flex-row">
         {/* 1. IMAGE CONTAINER */}
-        <div className="w-full h-[70vh] lg:w-[70%] lg:h-full bg-white flex flex-row overflow-x-auto flex-nowrap gap-2 scroll-smooth scrollbar-hide">
+        <div className="w-full h-[75vh] lg:w-[70%] lg:h-full bg-white flex flex-row overflow-x-auto flex-nowrap gap-2 scroll-smooth scrollbar-hide">
           {product.sub_images?.map((imgUrl, index) => (
             <div
               key={index}
