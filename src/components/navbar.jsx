@@ -109,19 +109,19 @@ const Navbar = () => {
             {/* 1. NAVIGATION LINKS AREA */}
             <div className='flex-1 flex flex-col justify-center w-full font-extralight'>
               <nav className="flex flex-col">
-                <Link to='/' onClick={closeAll} className='text-[24px] py-2 w-full px-6 border-b border-black hover:text-white hover:bg-black transition uppercase font-extralight font-host'>
+                <Link to='/' onClick={closeAll} className='text-[20px] py-2 w-full px-6 border-b border-black hover:text-white hover:bg-black transition uppercase font-poppins'>
                   Home
                 </Link>
-                <Link to='/events' onClick={closeAll} className='text-[24px] py-2 w-full px-6 border-b border-black hover:text-white hover:bg-black transition uppercase font-extralight font-host'>
+                <Link to='/events' onClick={closeAll} className='text-[20px] py-2 w-full px-6 border-b border-black hover:text-white hover:bg-black transition uppercase font-poppins'>
                   Events
                 </Link>
-                <Link to='/products' onClick={closeAll} className='text-[24px] py-2 w-full px-6 border-b border-black hover:text-white hover:bg-black transition uppercase font-extralight font-host'>
+                <Link to='/products' onClick={closeAll} className='text-[20px] py-2 w-full px-6 border-b border-black hover:text-white hover:bg-black transition uppercase font-poppins'>
                   Products
                 </Link>
-                <Link to='/collabs' onClick={closeAll} className='text-[24px] py-2 w-full px-6 border-b border-black hover:text-white hover:bg-black transition uppercase font-extralight font-host'>
+                <Link to='/collabs' onClick={closeAll} className='text-[20px] py-2 w-full px-6 border-b border-black hover:text-white hover:bg-black transition uppercase font-poppins'>
                   Collaborations
                 </Link>
-                <Link to='/stores' onClick={closeAll} className='text-[24px] py-2 w-full px-6 border-b border-black hover:text-white hover:bg-black transition uppercase font-extralight font-host'>
+                <Link to='/stores' onClick={closeAll} className='text-[20px] py-2 w-full px-6 border-b border-black hover:text-white hover:bg-black transition uppercase font-poppins'>
                   Stores
                 </Link>
               </nav>
@@ -189,7 +189,7 @@ const Navbar = () => {
       >
         <div className='flex flex-col items-center justify-center min-h-full'>
 
-          <div className='flex flex-col w-full max-w-[450px]'>
+          <div className='flex flex-col w-full max-w-[500px] px-6'>
             {/* Header */}
             <div className='flex items-start'>
               <div className='flex flex-col gap-3 mb-10'>
