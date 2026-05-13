@@ -55,7 +55,7 @@ const Navbar = () => {
 
         {/* MOBILE MENU */}
         <button
-          className='lg:hidden text-[24px]'
+          className='lg:hidden text-[14px]'
           onClick={() => toggleModal('menu')}
         >
           {activeModal === 'menu'
@@ -71,7 +71,7 @@ const Navbar = () => {
           <Link to="/stores">STORES</Link>
         </div>
 
-        <Link to='/' className='lg:hidden font-playfair font-medium text-[20px]'>
+        <Link to='/' className='lg:hidden font-playfair font-medium text-[15px]'>
           GENTLE MONSTER
         </Link>
 
@@ -103,21 +103,31 @@ const Navbar = () => {
 
       {/* MENU MODAL */}
       {activeModal === 'menu' && (
-        <div className='fixed inset-0 bg-white z-[240] flex flex-col justify-between pt-60 w-full font-poppins font-light lg:hidden'>
-          <div className='w-full flex flex-col font-extralight'>
-            <Link to='/' onClick={closeAll} className='text-[24px] py-3 w-full px-[40px] border-b border-black hover:text-white hover:bg-black transition'>HOME</Link>
-            <Link to='/events' onClick={closeAll} className='text-[24px] py-3 w-full px-[40px] border-b border-black hover:text-white hover:bg-black transition'>EVENTS</Link>
-            <Link to='/products' onClick={closeAll} className='text-[24px] py-3 w-full px-[40px] border-b border-black hover:text-white hover:bg-black transition'>PRODUCTS</Link>
-            <Link to='/collabs' onClick={closeAll} className='text-[24px] py-3 w-full px-[40px] border-b border-black hover:text-white hover:bg-black transition'>COLLABORATIONS</Link>
-            <Link to='/stores' onClick={closeAll} className='text-[24px] py-3 w-full px-[40px] border-b border-black hover:text-white hover:bg-black transition'>STORES</Link>
+        <div className='fixed inset-0 bg-white z-[240] flex flex-col justify-between pt-[60px] w-full font-poppins lg:hidden'>
+
+          {/* 1. TOP/CENTER AREA: Navigation Links */}
+          {/* Added 'flex-1' and 'justify-center' to vertically center these links */}
+          <div className='flex-1 flex flex-col justify-center w-full font-extralight'>
+            <Link to='/' onClick={closeAll} className='text-[24px] py-2 w-full px-[40px] border-b border-black hover:text-white hover:bg-black transition uppercase tracking-tighter'>HOME</Link>
+            <Link to='/events' onClick={closeAll} className='text-[24px] py-2 w-full px-[40px] border-b border-black hover:text-white hover:bg-black transition uppercase tracking-tighter'>EVENTS</Link>
+            <Link to='/products' onClick={closeAll} className='text-[24px] py-2 w-full px-[40px] border-b border-black hover:text-white hover:bg-black transition uppercase tracking-tighter'>PRODUCTS</Link>
+            <Link to='/collabs' onClick={closeAll} className='text-[24px] py-2 w-full px-[40px] border-b border-black hover:text-white hover:bg-black transition uppercase tracking-tighter'>COLLABORATIONS</Link>
+            <Link to='/stores' onClick={closeAll} className='text-[24px] py-2 w-full px-[40px] border-b border-black hover:text-white hover:bg-black transition uppercase tracking-tighter'>STORES</Link>
           </div>
-          <div className='w-full text-[15px] flex justify-between px-[40px] mb-16'>
-            <div className='flex gap-5'>
-              <button onClick={() => toggleModal('login')}>LOGIN</button>
-              <button onClick={() => toggleModal('cart')}>CART</button>
+
+          {/* 2. BOTTOM AREA: Login, Cart, and Time */}
+          <div className='w-full pb-10 pt-6 border-t border-neutral-100'>
+            <div className='flex justify-between items-center px-[40px]'>
+              <div className='flex gap-8 text-[13px] font-medium tracking-tight'>
+                <button onClick={() => toggleModal('login')} className="uppercase">LOGIN</button>
+                <button onClick={() => toggleModal('cart')} className="uppercase">CART ({totalQuantity})</button>
+              </div>
+
+              {/* Real-time or Static Time */}
+              <h1 className='text-[11px] text-[#949494] font-host'>TYO 06:01:38</h1>
             </div>
-            <h1 className='text-[#949494]'>TYO 06:01:38</h1>
           </div>
+
         </div>
       )}
 
