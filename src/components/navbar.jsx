@@ -156,16 +156,14 @@ const Navbar = () => {
       )}
 
       {/* SEARCH MODAL */}
-      <div className={`fixed top-[55px] left-0 w-full h-[calc(100vh-10px)] bg-white z-[300] flex flex-col items-center p-10 pt-16 transition-all duration-300 ease-in-out ${activeModal === 'search' ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-4 pointer-events-none"}`}>
-        <div className='flex flex-col w-[420px] lg:w-[520px] justify-center'>
-          <div className='flex justify-end items-end mb-10'>
-            <button onClick={closeAll} className='hidden lg:block'><img src={x} alt="close search" /></button>
-          </div>
+      <div className={`fixed w-full h-full bg-white z-[240] flex flex-col items-center transition-all duration-300 ease-in-out ${activeModal === 'search' ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-4 pointer-events-none"}`}>
+        <div className='flex flex-col h-full max-w-[500px] items-end pt-40 lg:pt-24 px-6 transition'>
+          <button onClick={closeAll} className='hidden lg:block mb-10'><img src={x} alt="close search" /></button>
           <div className='flex gap-5 border-b border-black w-full pb-2 px-3 items-end justify-center'>
             <img src={search} alt="search icon" />
             <input type="text" placeholder="Please enter the search term(s)" className='w-full outline-none font-host text-[14px]' autoFocus={activeModal === 'search'} />
           </div>
-          <div className='flex flex-col gap-12 mt-14'>
+          <div className='w-full flex flex-col gap-12 mt-14'>
             <div className='flex flex-col gap-1'>
               <h1 className="font-host text-[14px] tracking-wide">SEARCH TRENDS</h1>
               <div className="mt-4 flex gap-3 overflow-x-auto no-scrollbar scroll-smooth">
@@ -184,7 +182,7 @@ const Navbar = () => {
 
       {/* LOGIN MODAL */}
       <div
-        className={`fixed w-full h-full bg-white z-[200] transition-all duration-300 ease-in-out overflow-y-auto scrollbar-hide ${activeModal === 'login' ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-4 pointer-events-none"
+        className={`fixed w-full h-full bg-white z-[240] transition-all duration-300 ease-in-out overflow-y-auto scrollbar-hide ${activeModal === 'login' ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-4 pointer-events-none"
           }`}
       >
         <div className='flex flex-col items-center justify-center min-h-full'>
@@ -220,10 +218,10 @@ const Navbar = () => {
       </div>
 
       {/* CART BACKDROP */}
-      <div onClick={closeAll} className={`fixed top-[55px] left-0 w-full h-[calc(100vh-10px)] bg-black/40 backdrop-blur-sm z-[280] transition-opacity duration-500 ${activeModal === 'cart' ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`} />
+      <div onClick={closeAll} className={`fixed w-full h-full bg-black/40 backdrop-blur-sm z-[180] transition-opacity duration-500 ${activeModal === 'cart' ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`} />
 
       {/* CART MODAL */}
-      <div className={`fixed top-[55px] right-0 w-full lg:w-[480px] h-[calc(100vh-10px)] bg-white z-[300] flex flex-col p-10 pb-20 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${activeModal === 'cart' ? "translate-x-0 opacity-100" : "translate-x-full opacity-0 pointer-events-none"}`}>
+      <div className={`fixed right-0 w-full lg:w-[480px] h-full bg-white z-[240] flex flex-col px-6 pt-24 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${activeModal === 'cart' ? "translate-x-0 opacity-100" : "translate-x-full opacity-0 pointer-events-none"}`}>
         <div className='h-full flex flex-col justify-between'>
           <div className='flex flex-col'>
             <div className="flex justify-between items-start mb-10">
@@ -247,7 +245,7 @@ const Navbar = () => {
                   </div>
                 </div>
               ))}
-              {cartItems.length === 0 && <p className="text-center font-poppins text-gray-400 mt-10 text-[12px]">Your cart is empty.</p>}
+              {cartItems.length === 0 && <p className="text-center font-poppins text-gray-400 mt-20 text-[12px]">Your cart is empty.</p>}
             </div>
           </div>
 
@@ -268,18 +266,17 @@ const Navbar = () => {
       </div>
 
       {/* --- CHECKOUT MODAL (Login-style Layout) --- */}
-      <div className={`fixed top-[55px] left-0 w-full h-[calc(100vh-10px)] bg-white z-[400] flex flex-col items-center p-10 pt-16 overflow-y-auto transition-all duration-300 ease-in-out ${activeModal === 'checkout' ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-4 pointer-events-none"}`}>
+      <div className={`fixed w-full h-full bg-white z-[240] flex flex-col items-center justify-center px-6 overflow-y-auto transition-all duration-300 ease-in-out ${activeModal === 'checkout' ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-4 pointer-events-none"}`}>
         <div className='flex flex-col max-w-[520px] w-full justify-center'>
 
-          {/* Header Actions */}
-          <div className='flex justify-end items-center mb-10'>
-            <button onClick={closeAll}><img src={x} alt="close checkout" /></button>
-          </div>
 
           {/* Title Section */}
-          <div className='flex flex-col gap-4 mb-10'>
-            <h1 className='font-poppins font-extralight text-[20px] uppercase'>YOUR CART.</h1>
-            <p className='font-poppins text-[12px] text-gray-500'>Please review your items before proceeding to payment.</p>
+          <div className='w-full flex justify-between items-start'>
+            <div className='flex flex-col gap-4 mb-10'>
+              <h1 className='font-poppins font-extralight text-[20px] uppercase'>YOUR CART.</h1>
+              <p className='font-poppins text-[12px] text-gray-500'>Please review your items before proceeding to payment.</p>
+            </div>
+            <button onClick={closeAll}><img src={x} alt="close checkout" /></button>
           </div>
 
           {/* Items List (Simplified for narrow view) */}
