@@ -47,7 +47,7 @@ const Navbar = () => {
   return (
     <>
       {/* NAVBAR */}
-      <div className='fixed w-full flex justify-between py-3 px-10 border-b border-slate-300 bg-white z-[250]'>
+      <div className='fixed w-full flex justify-between py-3 px-6 border-b border-slate-300 bg-white z-[250]'>
 
         <Link to='/' className='hidden lg:block font-playfair font-medium text-[20px] text-left'>
           GENTLE MONSTER
@@ -103,31 +103,55 @@ const Navbar = () => {
 
       {/* MENU MODAL */}
       {activeModal === 'menu' && (
-        <div className='fixed inset-0 bg-white z-[240] flex flex-col justify-between pt-[60px] w-full font-poppins lg:hidden'>
+        <div className='fixed top-[55px] left-0 w-full h-[calc(100vh-55px)] bg-white z-[240] lg:hidden overflow-y-auto no-scrollbar'>
+          <div className='flex flex-col justify-between min-h-full'>
 
-          {/* 1. TOP/CENTER AREA: Navigation Links */}
-          {/* Added 'flex-1' and 'justify-center' to vertically center these links */}
-          <div className='flex-1 flex flex-col justify-center w-full font-extralight'>
-            <Link to='/' onClick={closeAll} className='text-[24px] py-2 w-full px-[40px] border-b border-black hover:text-white hover:bg-black transition uppercase tracking-tighter'>HOME</Link>
-            <Link to='/events' onClick={closeAll} className='text-[24px] py-2 w-full px-[40px] border-b border-black hover:text-white hover:bg-black transition uppercase tracking-tighter'>EVENTS</Link>
-            <Link to='/products' onClick={closeAll} className='text-[24px] py-2 w-full px-[40px] border-b border-black hover:text-white hover:bg-black transition uppercase tracking-tighter'>PRODUCTS</Link>
-            <Link to='/collabs' onClick={closeAll} className='text-[24px] py-2 w-full px-[40px] border-b border-black hover:text-white hover:bg-black transition uppercase tracking-tighter'>COLLABORATIONS</Link>
-            <Link to='/stores' onClick={closeAll} className='text-[24px] py-2 w-full px-[40px] border-b border-black hover:text-white hover:bg-black transition uppercase tracking-tighter'>STORES</Link>
-          </div>
-
-          {/* 2. BOTTOM AREA: Login, Cart, and Time */}
-          <div className='w-full pb-10 pt-6 border-t border-neutral-100'>
-            <div className='flex justify-between items-center px-[40px]'>
-              <div className='flex gap-8 text-[13px] font-medium tracking-tight'>
-                <button onClick={() => toggleModal('login')} className="uppercase">LOGIN</button>
-                <button onClick={() => toggleModal('cart')} className="uppercase">CART ({totalQuantity})</button>
-              </div>
-
-              {/* Real-time or Static Time */}
-              <h1 className='text-[11px] text-[#949494] font-host'>TYO 06:01:38</h1>
+            {/* 1. NAVIGATION LINKS AREA */}
+            <div className='flex-1 flex flex-col justify-center w-full font-extralight'>
+              <nav className="flex flex-col">
+                <Link to='/' onClick={closeAll} className='text-[24px] py-2 w-full px-6 border-b border-black hover:text-white hover:bg-black transition uppercase tracking-tighter'>
+                  Home
+                </Link>
+                <Link to='/events' onClick={closeAll} className='text-[24px] py-2 w-full px-6 border-b border-black hover:text-white hover:bg-black transition uppercase tracking-tighter'>
+                  Events
+                </Link>
+                <Link to='/products' onClick={closeAll} className='text-[24px] py-2 w-full px-6 border-b border-black hover:text-white hover:bg-black transition uppercase tracking-tighter'>
+                  Products
+                </Link>
+                <Link to='/collabs' onClick={closeAll} className='text-[24px] py-2 w-full px-6 border-b border-black hover:text-white hover:bg-black transition uppercase tracking-tighter'>
+                  Collaborations
+                </Link>
+                <Link to='/stores' onClick={closeAll} className='text-[24px] py-2 w-full px-6 border-b border-black hover:text-white hover:bg-black transition uppercase tracking-tighter'>
+                  Stores
+                </Link>
+              </nav>
             </div>
-          </div>
 
+            {/* 2. FOOTER AREA (Login, Cart, Time) */}
+            <div className='w-full pt-8 pb-10 border-t border-neutral-100 bg-white'>
+              <div className='flex justify-between items-center px-6'>
+                <div className='flex gap-8'>
+                  <button
+                    onClick={() => toggleModal('login')}
+                    className="text-[12px] font-host uppercase hover:opacity-50 transition-opacity"
+                  >
+                    Login
+                  </button>
+                  <button
+                    onClick={() => toggleModal('cart')}
+                    className="text-[12px] font-host uppercase hover:opacity-50 transition-opacity"
+                  >
+                    Cart ({totalQuantity})
+                  </button>
+                </div>
+
+                <div className="flex flex-col items-end">
+                  <h1 className='text-[12px] text-gray-500 font-host font-medium'>TYO 06:01:38</h1>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
       )}
 
@@ -159,20 +183,38 @@ const Navbar = () => {
       </div>
 
       {/* LOGIN MODAL */}
-      <div className={`fixed top-[55px] left-0 w-full h-[calc(100vh-10px)] bg-white z-[300] flex flex-col items-center p-10 pt-16 transition-all duration-300 ease-in-out ${activeModal === 'login' ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-4 pointer-events-none"}`}>
-        <div className='flex flex-col max-w-[520px] lg:w-[520px] justify-center'>
-          <div className='flex justify-end mb-10'><button onClick={closeAll}><img src={x} alt="close login" /></button></div>
-          <div className='flex flex-col gap-6 mb-10'>
-            <h1 className='font-poppins font-extralight text-[20px] uppercase'>LOGIN / CREATE ACCOUNT</h1>
-            <p className='font-poppins text-[12px]'>Please enter your email address, and we’ll check if you already have an account.</p>
-          </div>
-          <div className='flex flex-col justify-end'>
-            <h1 className='text-right font-poppins text-[12px] mb-4'>Required Fields*</h1>
-            <input type="email" placeholder="Email" className="border border-[#C7C7C7] rounded-md px-5 py-3 mb-4 outline-none text-[13px] font-host" />
-            <input type="password" placeholder="Password" className="border border-[#C7C7C7] rounded-md px-5 py-3 mb-4 outline-none text-[13px] font-host" />
-            <button className='text-[13px] bg-black text-white rounded-full font-host py-1'>CONTINUE</button>
-            <h1 className='font-poppins text-center mt-6 text-[13px]'>OR</h1>
-            <button className='border border-[#C7C7C7] rounded-md px-5 py-3 mt-6 text-[13px] font-host text-center hover:bg-black hover:text-white transition'>CONTINUE WITH GOOGLE</button>
+      <div
+        className={`fixed w-full h-full bg-white z-[200] transition-all duration-300 ease-in-out overflow-y-auto scrollbar-hide ${activeModal === 'login' ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-4 pointer-events-none"
+          }`}
+      >
+        <div className='flex flex-col items-center justify-center min-h-full'>
+
+          <div className='flex flex-col w-full max-w-[450px]'>
+            {/* Header */}
+            <div className='flex items-start'>
+              <div className='flex flex-col gap-3 mb-10'>
+                <h1 className='font-poppins font-extralight text-[20px] md:text-[24px] uppercase tracking-tight'>
+                  Login / Create Account
+                </h1>
+                <p className='font-poppins text-[11px] md:text-[12px] text-neutral-500 leading-relaxed'>
+                  Enter your email to access your orders, wishlist, and personalized recommendations.
+                </p>
+              </div>
+              <button onClick={closeAll} className="hover:rotate-90 transition-transform duration-200">
+                <img src={x} alt="close login" className="w-5 h-5" />
+              </button>
+            </div>
+
+
+            {/* Form Fields */}
+            <div className='flex flex-col justify-end'>
+              <h1 className='text-right font-poppins text-[12px] mb-4'>Required Fields*</h1>
+              <input type="email" placeholder="Email" className="border border-[#C7C7C7] rounded-md px-5 py-3 mb-4 outline-none text-[13px] font-host" />
+              <input type="password" placeholder="Password" className="border border-[#C7C7C7] rounded-md px-5 py-3 mb-4 outline-none text-[13px] font-host" />
+              <button className='text-[13px] bg-black text-white rounded-full font-host py-1'>CONTINUE</button>
+              <h1 className='font-poppins text-center mt-6 text-[13px]'>OR</h1>
+              <button className='border border-[#C7C7C7] rounded-md px-5 py-3 mt-6 text-[13px] font-host text-center hover:bg-black hover:text-white transition'>CONTINUE WITH GOOGLE</button>
+            </div>
           </div>
         </div>
       </div>
