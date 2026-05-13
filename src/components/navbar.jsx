@@ -109,19 +109,19 @@ const Navbar = () => {
             {/* 1. NAVIGATION LINKS AREA */}
             <div className='flex-1 flex flex-col justify-center w-full font-extralight'>
               <nav className="flex flex-col">
-                <Link to='/' onClick={closeAll} className='text-[24px] py-2 w-full px-6 border-b border-black hover:text-white hover:bg-black transition uppercase tracking-tighter'>
+                <Link to='/' onClick={closeAll} className='text-[24px] py-2 w-full px-6 border-b border-black hover:text-white hover:bg-black transition uppercase font-extralight font-host'>
                   Home
                 </Link>
-                <Link to='/events' onClick={closeAll} className='text-[24px] py-2 w-full px-6 border-b border-black hover:text-white hover:bg-black transition uppercase tracking-tighter'>
+                <Link to='/events' onClick={closeAll} className='text-[24px] py-2 w-full px-6 border-b border-black hover:text-white hover:bg-black transition uppercase font-extralight font-host'>
                   Events
                 </Link>
-                <Link to='/products' onClick={closeAll} className='text-[24px] py-2 w-full px-6 border-b border-black hover:text-white hover:bg-black transition uppercase tracking-tighter'>
+                <Link to='/products' onClick={closeAll} className='text-[24px] py-2 w-full px-6 border-b border-black hover:text-white hover:bg-black transition uppercase font-extralight font-host'>
                   Products
                 </Link>
-                <Link to='/collabs' onClick={closeAll} className='text-[24px] py-2 w-full px-6 border-b border-black hover:text-white hover:bg-black transition uppercase tracking-tighter'>
+                <Link to='/collabs' onClick={closeAll} className='text-[24px] py-2 w-full px-6 border-b border-black hover:text-white hover:bg-black transition uppercase font-extralight font-host'>
                   Collaborations
                 </Link>
-                <Link to='/stores' onClick={closeAll} className='text-[24px] py-2 w-full px-6 border-b border-black hover:text-white hover:bg-black transition uppercase tracking-tighter'>
+                <Link to='/stores' onClick={closeAll} className='text-[24px] py-2 w-full px-6 border-b border-black hover:text-white hover:bg-black transition uppercase font-extralight font-host'>
                   Stores
                 </Link>
               </nav>
