@@ -315,11 +315,9 @@ const Navbar = () => {
               </div>
             </div>
 
-            <button className='text-[13px] bg-black text-white rounded-full font-host py-1 uppercase mb-10 border hover:text-black hover:bg-white hover:border-black transition'>
+            <button className='text-[13px] bg-black text-white rounded-full font-host py-1 uppercase border hover:text-black hover:bg-white hover:border-black transition'>
               CONFIRM AND PAY
             </button>
-
-            <h1 className='font-poppins text-center mt-6 text-[11px] text-gray-400 uppercase tracking-widest'>Secure Checkout</h1>
           </div>
         </div>
       </div>
