@@ -266,7 +266,7 @@ const Navbar = () => {
       </div>
 
       {/* --- CHECKOUT MODAL (Login-style Layout) --- */}
-      <div className={`fixed w-full h-full bg-white z-[240] flex flex-col items-center justify-center px-6 overflow-y-auto transition-all duration-300 ease-in-out ${activeModal === 'checkout' ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-4 pointer-events-none"}`}>
+      <div className={`fixed w-full h-full bg-white z-[240] flex flex-col items-center pt-24 pb-20 px-6 overflow-y-auto transition-all duration-300 ease-in-out ${activeModal === 'checkout' ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-4 pointer-events-none"}`}>
         <div className='flex flex-col max-w-[520px] w-full justify-center'>
 
 
@@ -309,7 +309,7 @@ const Navbar = () => {
                 <span>Shipping</span>
                 <span className="text-green-600">Free</span>
               </div>
-              <div className="flex justify-between font-poppins font-bold text-[16px] uppercase pt-3 border-t border-neutral-200">
+              <div className="flex justify-between font-poppins font-medium tracking-tighter text-[16px] uppercase pt-3 border-t border-neutral-200">
                 <span>Total</span>
                 <span>₱ {subtotal.toLocaleString()}.00</span>
               </div>
