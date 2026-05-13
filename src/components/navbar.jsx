@@ -103,7 +103,7 @@ const Navbar = () => {
 
       {/* MENU MODAL */}
       {activeModal === 'menu' && (
-        <div className='fixed top-[55px] left-0 w-full h-[calc(100vh-55px)] bg-white z-[240] lg:hidden overflow-y-auto no-scrollbar'>
+        <div className='fixed w-full h-full bg-white z-[240] lg:hidden overflow-y-auto no-scrollbar'>
           <div className='flex flex-col justify-between min-h-full'>
 
             {/* 1. NAVIGATION LINKS AREA */}
@@ -280,7 +280,7 @@ const Navbar = () => {
           </div>
 
           {/* Items List (Simplified for narrow view) */}
-          <div className="flex flex-col gap-6 mb-10 max-h-[300px] overflow-y-auto no-scrollbar border-y border-neutral-100 py-6">
+          <div className="flex flex-col gap-6 mb-10 max-h-[250px] overflow-y-auto no-scrollbar border-y border-neutral-100 py-6">
             {cartItems.map((item, index) => (
               <div key={index} className="flex justify-between items-center gap-4">
                 <div className="flex items-center gap-4">

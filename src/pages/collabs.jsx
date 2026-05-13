@@ -102,7 +102,7 @@ const Collabs = () => {
 
         {/* --- CIRCLE FILTER MENU (REMOVED STICKY) --- */}
         <div className="w-full flex justify-center py-6 border-b border-neutral-100 bg-white">
-          <div className="flex gap-8 overflow-x-auto no-scrollbar px-10 items-start pt-6 pb-6">
+          <div className="flex gap-6 overflow-x-auto no-scrollbar px-10 items-start pt-6 pb-6">
             {collabFilters.map((filter) => (
               <button
                 key={filter.id}
@@ -116,7 +116,7 @@ const Collabs = () => {
                     }`}
                   style={{ backgroundImage: `url(${filter.img})` }}
                 />
-                <span className={`mt-4 text-[9px] uppercase tracking-tighter text-center leading-tight whitespace-pre-line ${selectedCollab === filter.id ? 'font-bold text-black' : 'text-neutral-400 group-hover:text-black'
+                <span className={`mt-4 text-[10px] uppercase tracking-tighter text-center leading-tight whitespace-pre-line ${selectedCollab === filter.id ? 'font-bold text-black' : 'text-neutral-400 group-hover:text-black'
                   }`}>
                   {filter.name}
                 </span>

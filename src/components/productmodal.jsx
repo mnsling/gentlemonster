@@ -24,7 +24,7 @@ const ProductModal = ({ isOpen, product, onClose, onAddToCart }) => {
         <div className="w-full h-auto lg:w-[30%] lg:h-full bg-white lg:border-l border-gray-100 p-8 lg:p-12 flex flex-col lg:justify-center mt-10">
           <button
             onClick={onClose}
-            className="text-[11px] uppercase tracking-[0.2em] mb-10 text-left hover:opacity-50 transition"
+            className="text-[11px] uppercase mb-10 text-left hover:opacity-50 transition"
           >
             ← BACK
           </button>
