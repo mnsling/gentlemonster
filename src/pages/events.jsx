@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { supabase } from '../supabaseClient'
 import Navbar from '../components/navbar'
-import arrow from '../assets/arrow-right-white.svg'
 
 const Events = () => {
   const [eventsList, setEventsList] = useState([]);
@@ -83,19 +82,19 @@ const Events = () => {
         
         {/* Main Section Header */}
         <div className='flex flex-col text-white text-[45px] lg:text-[100px] leading-[0.85] lg:leading-[0.8] relative z-10 select-none pointer-events-none mt-4 lg:mt-0'>
-          <h1>EVENTS</h1>
-          <h1 className='flex'><img src={arrow}/>CALENDAR</h1>
+          <h1>EVENTS<br/>🡢CALENDAR</h1>
         </div>
 
         {/* ========================================================================= */}
         {/* DESKTOP VIEW: HORIZONTAL GRID LAYOUT                                      */}
         {/* ========================================================================= */}
-        <div className='hidden lg:grid w-full grid-cols-4 gap-8 relative z-10 mt-auto pt-6 border-t border-white/20'>
+        <div className='hidden lg:grid w-full grid-cols-4 gap-8 relative z-10 pt-6 border-t border-white/20'>
           {eventsList.map((event) => (
             <div 
               key={event.id} 
+              // Updates background video to current item on hover
               onMouseEnter={() => event.video_url && setBgVideo(event.video_url)}
-              onMouseLeave={() => setBgVideo(eventsList[0]?.video_url || '')}
+              // FIX: Removed the reset handler entirely so it stays locked on the last hovered item
               className='flex flex-col gap-[7px] text-white font-host select-none group cursor-pointer'
             >
               <span className='text-[12px] text-neutral-400 tracking-normal'>
