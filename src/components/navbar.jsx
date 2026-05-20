@@ -266,14 +266,14 @@ const Navbar = () => {
       </div>
 
       {/* --- CHECKOUT MODAL (Login-style Layout) --- */}
-      <div className={`fixed w-full h-full bg-white z-[240] flex flex-col items-center pt-24 pb-20 px-6 overflow-y-auto transition-all duration-300 ease-in-out ${activeModal === 'checkout' ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-4 pointer-events-none"}`}>
+      <div className={`fixed w-full h-full bg-white z-[240] flex flex-col items-center justify-center px-6 overflow-y-auto transition-all duration-300 ease-in-out ${activeModal === 'checkout' ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-4 pointer-events-none"}`}>
         <div className='flex flex-col max-w-[520px] w-full justify-center'>
 
 
           {/* Title Section */}
           <div className='w-full flex justify-between items-start'>
             <div className='flex flex-col gap-4 mb-10'>
-              <h1 className='font-poppins font-extralight text-[20px] uppercase'>YOUR CART.</h1>
+              <h1 className='font-poppins font-extralight text-[20px] uppercase'>YOUR CART</h1>
               <p className='font-poppins text-[12px] text-gray-500'>Please review your items before proceeding to payment.</p>
             </div>
             <button onClick={closeAll}><img src={x} alt="close checkout" /></button>
