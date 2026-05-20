@@ -52,7 +52,7 @@ const Events = () => {
         setBgVideo(eventsList[next]?.video_url || '');
         return next;
       });
-    }, 4500);
+    }, 8500);
 
     return () => clearInterval(interval);
   }, [eventsList]);
@@ -178,8 +178,8 @@ const Events = () => {
       {/* ========================================================================= */}
       {/* LOWER PAGE CANVAS AREA: "THE POST" DATA FEED INTEGRATION                  */}
       {/* ========================================================================= */}
-      <div className='flex flex-col gap-10 bg-white pt-[40px] font-poppins px-6 lg:px-[47px] pb-24 z-10'>
-        <h1 className='text-[32px] tracking-tighter font-medium text-black uppercase'>🡢 THE POST</h1>
+      <div className='flex flex-col gap-10 bg-white pt-[40px] lg:pt-[95px] font-poppins px-6 lg:px-[47px] pb-24 z-10'>
+        <h1 className='text-[32px] lg:text-[48px] tracking-tighter font-medium text-black uppercase'>🡢 THE POST</h1>
 
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-12 w-full'>
           {postsList.map((post) => (
