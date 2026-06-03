@@ -54,14 +54,8 @@ const Home = () => {
           {/* Luxury ambient dark overlay gradient shield */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20 pointer-events-none z-10" />
 
-          {/* ASYMMETRICAL EDITORIAL TOP NAVIGATION OVERLAY FRAMEWORK */}
-          <div className='absolute top-0 left-0 w-full flex items-center justify-between p-6 md:p-10 z-20 text-white font-mono text-[10px] tracking-[0.2em] uppercase mix-blend-difference'>
-            <div>GM // EXPERIENCE</div>
-            <div className='hidden md:block'>© 2026 INTERNAL ARCHIVE</div>
-          </div>
-
           {/* HIGH-FASHION EDITORIAL HERO CLUSTER (Pinned Asymmetrically Bottom-Left) */}
-          <div className='absolute bottom-10 md:bottom-16 left-6 md:left-16 right-6 z-20 flex flex-col items-start text-left max-w-4xl animate-in fade-in slide-in-from-bottom-8 duration-1000 ease-out'>
+          <div className='font-host absolute bottom-10 md:bottom-16 left-6 md:left-16 right-6 z-20 flex flex-col items-start text-left max-w-4xl animate-in fade-in slide-in-from-bottom-8 duration-1000 ease-out'>
             
             <div className='text-white/60 text-[10px] tracking-[0.3em] uppercase font-mono mb-3 flex items-center gap-2'>
               <span className='w-1.5 h-1.5 bg-red-500 rounded-full animate-ping' />
@@ -69,9 +63,8 @@ const Home = () => {
             </div>
 
             {campaignName && (
-              <h1 className='text-white font-bold text-[38px] sm:text-[54px] lg:text-[72px] uppercase tracking-tighter leading-[0.85] mb-8 max-w-3xl drop-shadow-sm font-sans whitespace-pre-line'>
+              <h1 className='text-white text-[38px] sm:text-[54px] lg:text-[72px] uppercase tracking-tight italic leading-[0.85] mb-8 max-w-3xl drop-shadow-sm font-sans whitespace-pre-line'>
                 {campaignName.replace(' COLLECTION', '')} <br />
-                <span className='font-light italic text-neutral-300 tracking-normal font-serif lowercase text-[0.75em]'>collection</span>
               </h1>
             )}
 
